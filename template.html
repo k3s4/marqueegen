@@ -1,0 +1,80 @@
+        <html>
+            <head>
+                <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+				<link type="text/css" rel="stylesheet" href="style.css"/>
+				<script type="text/javascript">
+				function SecondsToTime(secs)
+				{
+					var t = new Date(1970,0,1);
+					t.setSeconds(secs);
+					var s = t.toTimeString().substr(0,8);
+					if(secs > 86399)
+					s = Math.floor((t - Date.parse("1/1/70")) / 3600000) + s.substr(2);
+					return s;
+				}
+				function TimeToSeconds(time) {
+					var split = time.split(/[: ]/);
+					if(time.indexOf('d') > -1) { //check for 'd' (days) char in string
+						var days = parseInt(split[0]) * 86400;
+						var hours = parseInt(split[1]) * 3600;
+						var minutes = parseInt(split[2]) * 60;
+						var seconds = parseInt(split[3]);
+						return days+hours+minutes+seconds;
+					} else {
+						var hours = parseInt(split[0]) * 3600;
+						var minutes = parseInt(split[1]) * 60;
+						var seconds = parseInt(split[2]);
+						return hours+minutes+seconds;
+					}
+				}
+				function getMaxOfArray(numArray) {
+					return Math.max.apply(null, numArray);
+				}
+				</script>
+            </head>
+            <body>
+			<div id="headline">
+				!TITLE!
+			</div>
+				<table>
+					<tr>
+					<td></td>
+						!WORKGROUPS_CONF!
+					</tr>
+					<tr>
+						<td class="statistic">Eingegangen</td>
+						!ENTERED!
+					</tr>
+					<tr>
+						<td class="statistic">Bearbeitet</td>
+						!COMPLETED!
+					</tr>
+					<tr>
+						<td class="statistic">Wartend</td>
+						!WAITING!
+					</tr>
+					<tr>
+						<td class="statistic">Längster Wartender</td>
+						!LONGEST_WAITING!
+					</tr>
+					<tr>
+						<td class="statistic">Durchschn. Bearbeitungszeit</td>
+						!AVG_WORKINGTIME!
+					</tr>
+					<tr>
+						<td class="statistic">Durchschn. Wartezeit</td>
+						!AVG_WAITTIME!
+					</tr>
+					<tr>
+						<td class="statistic">Servicelevel</td>
+						!SERVICELEVEL!
+					</tr>
+					<tr>
+						<td class="statistic">Beantwortungsquote</td>
+						!RESPONSE_RATE!
+					</tr>
+				</table>				
+            </body>
+			<xsl:comment>!AUTHOR!</xsl:comment>
+			<xsl:comment>!VERSION!</xsl:comment>
+        </html>

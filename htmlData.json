@@ -1,0 +1,17 @@
+{
+"workgroups": "<td class=\"workgroup\">!NAME!</td>",
+"entered": "<td class=\"data\">\n<xsl:value-of select=\"$!NAME!_CALLS_ENTERED\" /></td>",
+"completed": "<td class=\"data\">\n<xsl:value-of select=\"$!NAME!_CALLS_COMPLETED\" /></td>",
+"waiting": "<td class=\"data\">\n<xsl:value-of select=\"$!NAME!_CALLS_WAITING\" /></td>",
+"longestwaiting": "<td class=\"data\"><script type=\"text/javascript\">\nvar LCW_!NAME! = !TIME_TO_SECONDS!\ndocument.write(SecondsToTime(getMaxOfArray(LCW_!NAME!)));\n</script></td>",
+"longestwaiting_timetoseconds": "TimeToSeconds('<xsl:value-of select=\"$!NAME!_LCW_WG_!INDEX!\" />') ",
+"avg_workingtime": "<td class=\"data\"><script type=\"text/javascript\">\nvar !NAME!_ACT = !TIME_TO_SECONDS!\nvar ACT = SecondsToTime(!NAME!_ACT / <xsl:value-of select=\"$!NAME!_CALLS_ANSWERED\" />);\nif(<xsl:value-of select=\"$!NAME!_CALLS_ANSWERED\" /> == 0) {\nACT = \"00:00:00\";\ndocument.write(ACT);\n} else {\ndocument.write(ACT);\n}</script></td>",
+"avg_workingtime_timetoseconds": "TimeToSeconds('<xsl:value-of select=\"$!NAME!_ACT_WG_!INDEX!\" />')",
+"avg_waittime": "<td class=\"data\"><script type=\"text/javascript\">\nvar !NAME!_AWT = !TIME_TO_SECONDS!\nvar AWT = SecondsToTime(!NAME!_AWT / <xsl:value-of select=\"$!NAME!_CALLS_ANSWERED\" />);\nif(<xsl:value-of select=\"$!NAME!_CALLS_ANSWERED\" /> == 0) {\nAWT = \"00:00:00\";\ndocument.write(AWT);\n} else {\ndocument.write(AWT);\n}</script></td>",
+"avg_waittime_timetoseconds": "TimeToSeconds('<xsl:value-of select=\"$!NAME!_AWT_WG_!INDEX!\" />')",
+"servicelevel": "<td class=\"data\">\n<xsl:variable name=\"Servicelevel_!NAME!\" select=\"\nround((\n!SL_CALC!)\ndiv (number($!NAME!_CALLS_ENTERED)\n!ARD_CALC!)\n* 100)\"/>\n<xsl:choose><xsl:when test=\"not(number($Servicelevel_!NAME!))\">0%</xsl:when>\n<xsl:when test=\"number($Servicelevel_!NAME!) &lt; 0\">0%</xsl:when>\n<xsl:otherwise>\n<xsl:value-of select=\"$Servicelevel_!NAME!\" />%\n</xsl:otherwise>\n</xsl:choose></td>",
+"servicelevel_sl_calc": "number($!NAME!_ANSWERED_WG_!INDEX!) * number(translate($!NAME!_SL_WG_!INDEX!, ',', '.') div 100)",
+"servicelevel_ard_calc": "- number((translate($!NAME!_ARD_WG_!INDEX!, ',', '.') div 100) * number($!NAME!_ENTERED_WG_!INDEX!))",
+"responserate": "<td class=\"data\">\n<xsl:variable name=\"Beantwortungsquote_!INDEX!\" select=\"\nround(number($!NAME!_CALLS_ANSWERED) div (\nnumber($!NAME!_CALLS_ENTERED)\n!ARD_CALC!)* 100)\"/>\n<xsl:choose><xsl:when test=\"not(number($Beantwortungsquote_!INDEX!))\">0%</xsl:when>\n<xsl:when test=\"number($Beantwortungsquote_!INDEX!) &lt; 0\">0%</xsl:when>\n<xsl:otherwise>\n<xsl:value-of select=\"$Beantwortungsquote_!INDEX!\" />%\n</xsl:otherwise>\n</xsl:choose>\n</td>",
+"responserate_ard": "- number((translate($!NAME!_ARD_WG_!INDEX!, ',', '.') div 100) * number($!NAME!_ENTERED_WG_!INDEX!))"
+}

@@ -1,0 +1,9 @@
+{
+"title": "Test Marquee Generator",
+"workgroup_cfg": [{ "WORKGROUP_INTERVAL": "'CurrentShift'", "SHORTCALL_INTERVAL": "'3'" }],
+"workgroup": [
+	{ "name":"WB_SL", "list":[ "VT Wohnbau Telefonie SL", "Wohnbau Baukindergeld Telefonie SL" ] },
+	{ "name":"WB_FL", "list":[ "VT Wohnbau Telefonie FL", "Wohnbau Baukindergeld Telefonie FL" ] },
+	{ "name":"Telefonie", "list":[ "VT Wohnbau Telefonie SL", "VT BDO Telefonie FL", "VT Infra bankdurchgeleitet Telefonie FL", "VT Wohnbau Telefonie FL" ] }
+	]
+}

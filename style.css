@@ -1,0 +1,69 @@
+body {
+	color: white;
+	font-weight: bold;
+    font-family: "Arial";
+    margin-top: 10px;
+    overflow: hidden;
+    padding: 0px;
+}
+
+table {
+	box-shadow: 0px 0px 35px 10px rgba(0,0,0,0.75);
+	background-color: rgba(99, 102, 106, 0.4);
+	border: 1px solid white;
+	border-spacing: 2vmin;
+	text-align: center;
+	margin-left: auto; 
+    margin-right: auto;
+    width: 95%;
+}
+
+td {
+    height: 5vmin;
+} 
+
+#headline {
+	line-height: 100px;
+	margin: 0 auto;
+	margin-bottom: 30px;
+	font-size: 5vmin;
+	text-align: center;
+	width: 80vmin;
+	height: 100px;
+	border: 1px solid rgba(255,255,255,0.8);
+	box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.8);
+	background-color: rgba(0, 0, 0, 0.5);
+	border-radius: 50px;
+}
+
+.workgroup {
+	box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.8);
+	border: 1px solid rgba(255,255,255,0.8);
+	background-color: rgba(0, 0, 0, 0.5);
+	font-size: 2vw;
+	width: 500px;
+	max-width: 500px;
+	overflow: hidden;
+	border-radius: 30px;
+	white-space: nowrap;
+}
+
+.data {
+	font-size: 3.5vmin;
+	border: 1px solid rgba(255,255,255,0.8);
+	opacity: 1.0;
+	background: linear-gradient(to bottom, rgba(0, 61, 165, 0.4) 0%, rgba(0,0,0,0.5) 80%);
+	border-radius: 5px;
+	box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.4);
+}
+
+.statistic {
+	width: 600px;
+	font-size: 3vmin;
+	border: 1px solid rgba(255,255,255,0.8);
+	padding-left: 15px;
+	text-align: left;
+	background-color: rgba(0, 0, 0, 0.5);
+	box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.4);
+	border-radius: 5px;
+}
